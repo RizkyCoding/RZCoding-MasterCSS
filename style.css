@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito Sans:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans";
+  
+  font-size: 22px;
+}
+
+:root {
+  --clr: #222327;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--clr);
+}
+
+.navigasi {
+  position: relative;
+  width: 400px;
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.navigasi ul {
+  display: flex;
+  width: 350px;
+}
+
+.navigasi ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.navigasi ul li a {
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+    color: var(--clr);
+}
+
+.navigasi ul li a i {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--clr);
+}
+
+.navigasi ul li.aktif a i {
+  transform: translateY(-35px);
+}
+
+.navigasi ul li a .teks {
+  position: absolute;
+  color: var(--clr);
+  font-weight: 700;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.navigasi ul li.aktif a .teks {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.indikator{
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: #53c7b7;
+    border-radius: 50%;
+    border: 6px solid var(--clr);
+    transition: 0.5s;
+}
+
+.indikator::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
+}
+ 
+.indikator::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 var(--clr);
+}
+
+.navigasi ul li.aktif:nth-child(1).aktif ~ .indikator
+{
+    transform: translateX(calc(70px * 0));
+}
+
+.navigasi ul li.aktif:nth-child(2).aktif ~ .indikator
+{
+    transform: translateX(calc(70px * 1));
+}
+
+.navigasi ul li.aktif:nth-child(3).aktif ~ .indikator
+{
+    transform: translateX(calc(70px * 2));
+}
+
+.navigasi ul li.aktif:nth-child(4).aktif ~ .indikator
+{
+    transform: translateX(calc(70px * 3));
+}
+
+.navigasi ul li.aktif:nth-child(5).aktif ~ .indikator
+{
+    transform: translateX(calc(70px * 4));
+}

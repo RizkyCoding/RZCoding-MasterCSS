@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Test</title>
+</head>
+<body>
+    <div class="navigasi">
+        <ul>
+            <li class="list aktif">
+                <a href="#">
+                <span class="ikon"></span>
+                <i class='bx bx-home'></i>
+                <span class="teks">Beranda</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                <span class="ikon"></span>
+                <i class='bx bx-user'></i>
+                <span class="teks">Profil</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                <span class="ikon"></span>
+                <i class='bx bx-bell'></i>
+                <span class="teks">Notifikasi</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                <span class="ikon"></span>
+                    <i class='bx bx-cog'></i>
+                <span class="teks">Pengaturan</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                <span class="ikon"></span>
+                    <i class='bx bx-log-out'></i>
+                <span class="teks">Logout</span>
+                </a>
+            </li>
+            <div class="indikator"></div>
+        </ul>
+    </div>
+    <script>
+        const list = document.querySelectorAll('.list');
+        function aktifLink() {
+            list.forEach((item) => 
+            item.classList.remove('aktif'));
+            this.classList.add('aktif');
+        }
+
+        list.forEach((item) =>
+        item.addEventListener('click',aktifLink));
+    </script>
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+</body>
+</html>
